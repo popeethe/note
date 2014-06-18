@@ -18,8 +18,9 @@
 
 
 ====
-
-    sudo yum install docker
+    sudo rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6
+    sudo  yum install -y http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+    sudo yum install -y docker-io
     sudo service docker start
     sudo docker images | awk '{print $3}' | xargs docker rmi
     sudo docker build -t centos:build .
